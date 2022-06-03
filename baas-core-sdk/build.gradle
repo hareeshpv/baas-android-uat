@@ -40,8 +40,9 @@ dependencies {
 
     implementation group: 'com.zendesk', name: 'support', version: '5.0.8'
 
-    implementation files('libs/baas-core-nonUISdk-debug.aar')
-//    implementation project(path: ':baas-core-nonUISdk')
+//    implementation files('libs/baas-core-nonUISdk-debug.aar')
+    implementation project(path: ':baas-core-nonUISdk')
+    implementation project(path: ':baas-core-test')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
