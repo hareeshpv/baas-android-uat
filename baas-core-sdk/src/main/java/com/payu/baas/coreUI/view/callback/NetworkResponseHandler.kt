@@ -1,6 +1,6 @@
 package com.payu.baas.coreUI.view.callback
 
-import com.payu.baas.core.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
 
 interface NetworkResponseHandler {
     fun onSuccess(response: String)

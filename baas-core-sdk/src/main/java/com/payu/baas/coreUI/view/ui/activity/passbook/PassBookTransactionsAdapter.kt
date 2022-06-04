@@ -6,8 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ItemPassbookTransactionsBinding
-import com.payu.baas.coreUI.model.entities.model.GetPassBookTransactionDetailHeader
-import com.payu.baas.core.model.responseModels.GetPassBookTransactionDetails
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetPassBookTransactionDetails
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
 import com.payu.baas.coreUI.util.UtilsUI
 

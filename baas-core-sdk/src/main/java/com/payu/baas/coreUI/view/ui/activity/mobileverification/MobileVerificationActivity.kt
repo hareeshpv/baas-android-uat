@@ -14,20 +14,16 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityMobileVerificationBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.responseModels.SendOtpResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.SendOtpResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
 import com.payu.baas.coreUI.util.BaaSConstantsUI
-import com.payu.baas.coreUI.util.JsonUtil
 import com.payu.baas.coreUI.util.Resource
 import com.payu.baas.coreUI.util.Status
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.otpverification.OTPVerificationActivity
 import com.payu.baas.coreUI.view.ui.snackbaar.SimpleCustomSnackbar
-import java.util.*
 
 
 class MobileVerificationActivity : BaseActivity() {

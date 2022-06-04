@@ -4,11 +4,10 @@ import android.content.Context
 import android.view.View
 import androidx.lifecycle.*
 import com.payu.baas.coreUI.R
-import com.payu.baas.coreUI.app.BaasUIApp
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
+import com.payu.baas.coreUI.nonUI.model.responseModels.*
 import com.payu.baas.coreUI.util.*
 import com.payu.baas.coreUI.view.callback.BaseCallback
 import com.payu.baas.coreUI.view.callback.ClickHandler

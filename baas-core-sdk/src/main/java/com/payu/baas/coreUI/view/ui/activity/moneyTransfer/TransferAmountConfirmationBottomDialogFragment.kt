@@ -4,14 +4,13 @@ import android.app.Dialog
 import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.gson.Gson
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.LayoutTransferAmountConfirmationPopupBinding
-import com.payu.baas.core.model.responseModels.PrevalidateTransactionResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.PrevalidateTransactionResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
 import com.payu.baas.coreUI.util.UtilsUI
 

@@ -7,16 +7,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityCompleteKycactivityBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.responseModels.GetApplicationIdResultsResponse
-import com.payu.baas.core.model.responseModels.GetUserStateResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetApplicationIdResultsResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetUserStateResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.*
 import com.payu.baas.coreUI.util.enums.LastCall
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.panEmpVerification.PANEmployeeDetailActivity
 import java.util.*
@@ -74,7 +73,7 @@ class CompleteKYCActivity : BaseActivity() {
                         it.data?.let {
                             if (it is GetUserStateResponse) {
                                 if (it.message.isNullOrEmpty()) { // right now we are not having logout so getting this as not clearing data in testing mode after crash or anything.
-                                    viewModel.showViewsAsPerUserState(UserState.MOBILE_NOT_SUBMITTED.getValue()) //so added this check
+                                    viewModel.showViewsAsPerUserState(UserStateUI.MOBILE_NOT_SUBMITTED.getValue()) //so added this check
                                 } else
 //                                    if (SessionManagerUI.getInstance(this).userPanDetails.isNullOrEmpty()
 //                                        && !isUserOnBoarded(it.message!!)
@@ -84,7 +83,7 @@ class CompleteKYCActivity : BaseActivity() {
                                     ) {
                                         viewModel.showViewsAsPerUserState(it.message!!)
                                     } else
-                                        viewModel.showViewsAsPerUserState(UserState.MOBILE_VERIFIED.getValue())
+                                        viewModel.showViewsAsPerUserState(UserStateUI.MOBILE_VERIFIED.getValue())
 
                             }
                         }
@@ -257,7 +256,7 @@ class CompleteKYCActivity : BaseActivity() {
         super.onResume()
         hideKeyboard(this)
         val userState = SessionManagerUI.getInstance(this).userStatusCode
-        if (userState.isNullOrEmpty() || userState.equals(UserState.MOBILE_VERIFIED.getValue())) {
+        if (userState.isNullOrEmpty() || userState.equals(UserStateUI.MOBILE_VERIFIED.getValue())) {
             viewModel.getUserState()
         } else {
             viewModel.showViewsAsPerUserState(userState)
@@ -277,29 +276,29 @@ class CompleteKYCActivity : BaseActivity() {
     }
 
     fun areKycChecksPassed(uState: String): Boolean {
-        if ((uState.equals(UserState.KYC_CHECKS_PASSED.getValue()))
+        if ((uState.equals(UserStateUI.KYC_CHECKS_PASSED.getValue()))
         )
             return true
         return false
     }
     fun areKycChecksFailedOrNotVerified(uState: String): Boolean {
-        if ((uState.equals(UserState.KYC_CHECKS_FAILED.getValue()))
-                    || (uState.equals(UserState.ONBOARDING_FAILED_1.getValue()))
-                    || (uState.equals(UserState.ONBOARDING_FAILED_2.getValue()))
-                    || (uState.equals(UserState.KYC_RESULT_SAVED.getValue()))
-                    || (uState.equals(UserState.AADHARXML_SAVED.getValue()))
-                    || (uState.equals(UserState.SELFIE_SAVED.getValue()))
-                    || (uState.equals(UserState.LAT_LONG_IP_SAVED.getValue()))
+        if ((uState.equals(UserStateUI.KYC_CHECKS_FAILED.getValue()))
+                    || (uState.equals(UserStateUI.ONBOARDING_FAILED_1.getValue()))
+                    || (uState.equals(UserStateUI.ONBOARDING_FAILED_2.getValue()))
+                    || (uState.equals(UserStateUI.KYC_RESULT_SAVED.getValue()))
+                    || (uState.equals(UserStateUI.AADHARXML_SAVED.getValue()))
+                    || (uState.equals(UserStateUI.SELFIE_SAVED.getValue()))
+                    || (uState.equals(UserStateUI.LAT_LONG_IP_SAVED.getValue()))
         )
             return true
         return false
     }
     fun isUserOnBoarded(uState: String): Boolean {
-        if ((uState.equals(UserState.ONBOARDING_SUCCESS.getValue())
-                    || uState.equals(UserState.ONBOARDED.getValue())
-                    || uState.equals(UserState.PASSCODE_SET.getValue()))
+        if ((uState.equals(UserStateUI.ONBOARDING_SUCCESS.getValue())
+                    || uState.equals(UserStateUI.ONBOARDED.getValue())
+                    || uState.equals(UserStateUI.PASSCODE_SET.getValue()))
         ) {
-            if(uState.equals(UserState.PASSCODE_SET.getValue()))
+            if(uState.equals(UserStateUI.PASSCODE_SET.getValue()))
             viewModel.baseCallBack!!.cleverTapUserOnBoardingEvent(BaaSConstantsUI.CL_USER_VERIFY_OTP,
                 BaaSConstantsUI.CL_USER_OTP_VERIFICATION_EVENT_ID,
                 SessionManager.getInstance(this).accessToken,

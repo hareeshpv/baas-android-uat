@@ -14,14 +14,12 @@ import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityCardsBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.BaaSConstantsUI
-import com.payu.baas.coreUI.util.JsonUtil
 import com.payu.baas.coreUI.util.Resource
 import com.payu.baas.coreUI.util.Status
 import com.payu.baas.coreUI.view.ui.BaseActivity
@@ -482,7 +480,7 @@ class CardsActivity : BaseActivity() {
                 )
             )
         }
-//        var cardImage = com.payu.baas.core.storage.SessionManager.getInstance(this).cardImage
+//        var cardImage = com.payu.baas.coreUI.nonUI.SessionManager.getInstance(this).cardImage
 //        if (cardImage.isNullOrEmpty()) {
             viewModel.getCardBackImage()
 //        } else {
@@ -501,7 +499,7 @@ class CardsActivity : BaseActivity() {
 //        )
 //        binding.ivCardBack.setImageBitmap(mIcon)
         var cardImage =
-            com.payu.baas.core.storage.SessionManager.getInstance(this).cardImage
+            SessionManager.getInstance(this).cardImage
         Glide.with(applicationContext)
             .load(cardImage)
             .error(R.drawable.ic_launcher_background)
@@ -701,7 +699,7 @@ class CardsActivity : BaseActivity() {
             if (requestCode == ModuleCall.BLOCK.ordinal) {
                 var isCardBlocked = SessionManagerUI.getInstance(this).isCardBlocked
                 if (isCardBlocked.equals("INACTIVE")) {
-                    com.payu.baas.core.storage.SessionManager.getInstance(this).cardImage = ""
+                    SessionManager.getInstance(this).cardImage = ""
                     showSnackbarOnSwitchAction(BaaSConstantsUI.CARD_BLOCKED_SUCCESS_MSG, true)
                     viewModel.cardReOrder()
                 } else {

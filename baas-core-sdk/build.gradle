@@ -40,9 +40,8 @@ dependencies {
 
     implementation group: 'com.zendesk', name: 'support', version: '5.0.8'
 
-//    implementation files('libs/baas-core-nonUISdk-debug.aar')
-    implementation project(path: ':baas-core-nonUISdk')
-    implementation project(path: ':baas-core-test')
+//    implementation files('libs/non_ui_sdk.aar')
+//    implementation project(path: ':baas-core-nonUISdk')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -79,6 +78,11 @@ dependencies {
     //Glide to Vector - Load SVG image
     //    implementation 'io.sentry:sentry-android:5.6.1'
 //    implementation 'com.github.tushargabani-ustech:baas-android:1.12'
-
+//Required for nonUi calls
+    testImplementation('androidx.test:core:1.4.0') //RoboElectric sdk
+    testImplementation 'org.robolectric:robolectric:4.6'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.3.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
 
 }

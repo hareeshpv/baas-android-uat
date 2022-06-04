@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.gson.Gson
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityAdvanceTransactionDetailBinding
-import com.payu.baas.core.model.responseModels.TransactionDetailsResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.TransactionDetailsResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
 import com.payu.baas.coreUI.util.BaaSConstantsUI
 import com.payu.baas.coreUI.util.UtilsUI

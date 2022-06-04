@@ -1,11 +1,10 @@
 package com.payu.baas.coreUI.view.ui.activity.dashboard
 
 import android.content.Context
-import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import com.payu.baas.coreUI.R
-import com.payu.baas.core.model.model.TipDetails
+import com.payu.baas.coreUI.nonUI.model.model.TipDetails
 import com.payu.baas.coreUI.view.callback.ItemClickListener
 import kotlinx.android.synthetic.main.adapter_tips.view.*
 

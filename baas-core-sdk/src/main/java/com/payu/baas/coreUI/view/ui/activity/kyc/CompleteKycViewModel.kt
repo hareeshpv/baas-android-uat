@@ -8,17 +8,18 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.ObservableField
 import androidx.lifecycle.*
 import com.payu.baas.coreUI.R
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
+import com.payu.baas.coreUI.nonUI.model.responseModels.ApiResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetApplicationIdResultsResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetUserStateResponse
 import com.payu.baas.coreUI.util.*
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.callback.BaseCallback
 import com.payu.baas.coreUI.view.ui.BaseViewModel
 import com.payu.baas.coreUI.view.ui.activity.accountopeningfailure.AccountOpeningFailureScreenActivity
-import com.payu.baas.coreUI.view.ui.activity.dashboard.DashboardActivity
 import com.payu.baas.coreUI.view.ui.activity.enterpasscode.PasscodeActivity
 import com.payu.baas.coreUI.view.ui.activity.mobileverification.MobileVerificationActivity
 import com.payu.baas.coreUI.view.ui.activity.onboarding.WelcomeScreenActivity
@@ -179,7 +180,7 @@ class CompleteKycViewModel(
 
     fun reviewAndSubmit() {
         SessionManagerUI.getInstance(context).userStatusCode =
-            UserState.KYC_SCREEN_PASSED.getValue()
+            UserStateUI.KYC_SCREEN_PASSED.getValue()
         baseCallBack?.callNextScreen(
             Intent(context, ReviewSubmitDetailActivity::class.java),
             null,
@@ -190,7 +191,7 @@ class CompleteKycViewModel(
     fun showViewsAsPerUserState(userStatusCode: String) {
         SessionManagerUI.getInstance(context).userStatusCode = userStatusCode
         when (userStatusCode) {
-            UserState.MOBILE_NOT_SUBMITTED.getValue() -> {
+            UserStateUI.MOBILE_NOT_SUBMITTED.getValue() -> {
                 baseCallBack?.callNextScreen(
                     Intent( 
                         context,
@@ -198,7 +199,7 @@ class CompleteKycViewModel(
                     ), null, true
                 )
             }
-            UserState.MOBILE_VERIFIED.getValue() -> {
+            UserStateUI.MOBILE_VERIFIED.getValue() -> {
                 visTickPan.set(false)
                 visTickCardDelivery.set(true)
                 visTickAadhaar.set(true)
@@ -236,7 +237,7 @@ class CompleteKycViewModel(
                 visStartSubmitLayout.set(false)
                 strStartPanText.set(context.resources.getString(R.string.start_text))
             }
-            UserState.PAN_SAVED_LOCAL.getValue() -> {
+            UserStateUI.PAN_SAVED_LOCAL.getValue() -> {
                 visTickPan.set(true)
                 visTickCardDelivery.set(false)
                 visTickSelfie.set(true)
@@ -274,7 +275,7 @@ class CompleteKycViewModel(
                 visStartSubmitLayout.set(false)
                 strStartCardDeliveryText.set(context.resources.getString(R.string.continue_text))
             }
-            UserState.CARD_DELIVERY_ADDRESS_SAVED_LOCAL.getValue() -> {
+            UserStateUI.CARD_DELIVERY_ADDRESS_SAVED_LOCAL.getValue() -> {
                 visTickPan.set(true)
                 visTickCardDelivery.set(true)
                 visTickSelfie.set(false)
@@ -317,7 +318,7 @@ class CompleteKycViewModel(
 //                visStartAadhaarLayout.set(View.GONE)
 //                visStartSubmitLayout.set(View.GONE)
             }
-            UserState.SELFIE_SAVED_LOCAL.getValue() -> {
+            UserStateUI.SELFIE_SAVED_LOCAL.getValue() -> {
                 visTickPan.set(true)
                 visTickCardDelivery.set(true)
                 visTickSelfie.set(true)
@@ -355,7 +356,7 @@ class CompleteKycViewModel(
                 visStartSubmitLayout.set(false)
                 strStartAadhaarText.set(context.resources.getString(R.string.continue_text))
             }
-            UserState.AADHARXML_SAVED_LOCAL.getValue() -> {
+            UserStateUI.AADHARXML_SAVED_LOCAL.getValue() -> {
                 visTickPan.set(true)
                 visTickCardDelivery.set(true)
                 visTickSelfie.set(true)
@@ -393,17 +394,17 @@ class CompleteKycViewModel(
                 visStartSubmitLayout.set(true)
                 strStartSubmitText.set(context.resources.getString(R.string.finish_text))
             }
-            UserState.KYC_SCREEN_PASSED.getValue(),
-            UserState.SELFIE_SAVED.getValue(),
-            UserState.AADHARXML_SAVED.getValue(),
-            UserState.LAT_LONG_IP_SAVED.getValue(),
-            UserState.KYC_RESULT_SAVED.getValue(),
-            UserState.KYC_CHECKS_PASSED.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS_1.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS_2.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS_3.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS_4.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS.getValue() -> {
+            UserStateUI.KYC_SCREEN_PASSED.getValue(),
+            UserStateUI.SELFIE_SAVED.getValue(),
+            UserStateUI.AADHARXML_SAVED.getValue(),
+            UserStateUI.LAT_LONG_IP_SAVED.getValue(),
+            UserStateUI.KYC_RESULT_SAVED.getValue(),
+            UserStateUI.KYC_CHECKS_PASSED.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS_1.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS_2.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS_3.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS_4.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS.getValue() -> {
                 baseCallBack?.callNextScreen(
                     Intent(
                         context,
@@ -411,10 +412,10 @@ class CompleteKycViewModel(
                     ), null, true
                 )
             }
-            UserState.KYC_CHECKS_FAILED.getValue(),
-            UserState.ONBOARDING_FAILED_1.getValue(),
-            UserState.ONBOARDING_FAILED_2.getValue(),
-            UserState.ONBOARDING_FAILED.getValue() -> {
+            UserStateUI.KYC_CHECKS_FAILED.getValue(),
+            UserStateUI.ONBOARDING_FAILED_1.getValue(),
+            UserStateUI.ONBOARDING_FAILED_2.getValue(),
+            UserStateUI.ONBOARDING_FAILED.getValue() -> {
                 baseCallBack?.callNextScreen(
                     Intent(
                         context,
@@ -423,23 +424,23 @@ class CompleteKycViewModel(
                 )
             }
 
-            UserState.ONBOARDED.getValue(),
-            UserState.ONBOARDING_SUCCESS.getValue() -> {
+            UserStateUI.ONBOARDED.getValue(),
+            UserStateUI.ONBOARDING_SUCCESS.getValue() -> {
                 baseCallBack?.callNextScreen(
                     Intent(context, WelcomeScreenActivity::class.java),
                     null, true
                 )
             }
-            UserState.WELCOM_SCREEN_REACHED.getValue() -> {
+            UserStateUI.WELCOM_SCREEN_REACHED.getValue() -> {
                 baseCallBack?.callNextScreen(
                     Intent(context, SetPasscodeActivity::class.java),
                     null,
                     true
                 )
             }
-            UserState.PASSCODE_SET.getValue(),
-            UserState.LOGIN_DONE.getValue(),
-            UserState.LOGGED_OUT.getValue() -> {
+            UserStateUI.PASSCODE_SET.getValue(),
+            UserStateUI.LOGIN_DONE.getValue(),
+            UserStateUI.LOGGED_OUT.getValue() -> {
                 baseCallBack?.callNextScreen(
                     Intent(context, PasscodeActivity::class.java),
                     null,

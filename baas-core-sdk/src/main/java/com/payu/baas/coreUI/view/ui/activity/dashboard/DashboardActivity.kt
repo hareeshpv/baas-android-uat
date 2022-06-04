@@ -26,14 +26,13 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityDashboardBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.model.OfferDetails
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.model.OfferDetails
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
-import com.payu.baas.core.util.Utils
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.util.Utils
+import com.payu.baas.coreUI.nonUI.model.responseModels.*
 import com.payu.baas.coreUI.util.*
 import com.payu.baas.coreUI.util.enums.ProfileWebViewEnum
 import com.payu.baas.coreUI.view.callback.ItemClickListener
@@ -623,15 +622,15 @@ class DashboardActivity : BaseActivity() {
             (tipsAdapter as TipsAdapter).setList(tipDetails.tipsList)
 
             // TODO: testing
-            /*var list = arrayListOf<TipDetails>()
-            for (i in 1..3) {
-                var tips = TipDetails()
-                tips.tipText =
-                    "Aap apni advance salary se roz bina surcharge diye petrol kharid skte ho. Aap apni advance salary se roz bina surcharge diye petrol kharid skte ho. Aap apni advance salary se roz bina surcharge diye petrol kharid skte ho. Aap apni advance salary se roz bina surcharge diye petrol kharid skte ho."
-
-                list.add(tips)
-            }
-            (tipsAdapter as TipsAdapter).setList(list)*/
+//            var list = arrayListOf<TipDetails>()
+//            for (i in 1..3) {
+//                var tips = TipDetails()
+//                tips.tipText =
+//                    "Aap apni advance salary se roz bina surcharge diye petrol kharid skte ho. Aap apni advance salary se roz bina surcharge diye petrol kharid skte ho. Aap apni advance salary se roz bina surcharge diye petrol kharid skte ho. Aap apni advance salary se roz bina surcharge diye petrol kharid skte ho."
+//
+//                list.add(tips)
+//            }
+//            (tipsAdapter as TipsAdapter).setList(list)
 
             //Give padding to tabs
             for (i in 0 until binding.tlTips.tabCount) {

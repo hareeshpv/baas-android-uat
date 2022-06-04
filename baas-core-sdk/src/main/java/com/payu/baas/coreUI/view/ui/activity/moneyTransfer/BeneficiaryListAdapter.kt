@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ItemBeneficiaryBinding
-import com.payu.baas.core.model.model.BeneficiaryModel
+import com.payu.baas.coreUI.nonUI.model.model.BeneficiaryModel
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
 import com.payu.baas.coreUI.util.UtilsUI
 import com.payu.baas.coreUI.view.callback.ImageLoadingListener

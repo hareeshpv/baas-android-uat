@@ -11,16 +11,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityPanemployeeDetailBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.coreUI.model.entities.model.PanDetailsModelUI
-import com.payu.baas.core.model.model.CardDeliveryAddressModel
-import com.payu.baas.core.model.responseModels.VerifyEmployeeResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.model.CardDeliveryAddressModel
+import com.payu.baas.coreUI.nonUI.model.responseModels.VerifyEmployeeResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.*
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.kyc.CardDeliveryAddressDetailActivity
 import com.payu.baas.coreUI.view.ui.activity.notVerifiedEmp.NotVerifiedEmpActivity
@@ -231,7 +229,7 @@ class PANEmployeeDetailActivity : BaseActivity() {
         panDetails.employeeId = viewModel.strEmpId.get().toString().trim()
         panDetails.panNumber = viewModel.strPanNumber.get().toString().trim()
         SessionManagerUI.getInstance(this).userPanDetails = com.payu.baas.coreUI.util.JsonUtil.toString(panDetails)
-        SessionManagerUI.getInstance(this).userStatusCode = UserState.PAN_SAVED_LOCAL.getValue()
+        SessionManagerUI.getInstance(this).userStatusCode = UserStateUI.PAN_SAVED_LOCAL.getValue()
 
         /* Saving address details in local not passing as intenet extra
             as in case user opens the card address screen directly from Complete kyc screen

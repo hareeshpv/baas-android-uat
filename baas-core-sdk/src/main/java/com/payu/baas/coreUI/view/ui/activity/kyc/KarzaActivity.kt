@@ -10,11 +10,11 @@ import com.karza.okycmaster.KDataListener
 import com.karza.okycmaster.KManager
 import com.karza.okycmaster.SDKEnv
 import com.payu.baas.coreUI.R
-import com.payu.baas.core.model.responseModels.KarzaAadharResponse
-import com.payu.baas.core.model.responseModels.KarzaSelfieResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.KarzaAadharResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.KarzaSelfieResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import org.json.JSONObject
 
 class KarzaActivity : AppCompatActivity(), KDataListener {
@@ -50,7 +50,7 @@ class KarzaActivity : AppCompatActivity(), KDataListener {
         if (grantResults[0].equals(PackageManager.PERMISSION_GRANTED)) {
             kManager = KManager.Builder(supportFragmentManager)
                 .setContext(applicationContext)
-                .setUserToken(com.payu.baas.core.storage.SessionManager.getInstance(this).karzaUserToken)
+                .setUserToken(SessionManager.getInstance(this).karzaUserToken)
                 .setDataListener(this)
                 .setEnv(SDKEnv.TEST)
                 .build()
@@ -74,7 +74,7 @@ class KarzaActivity : AppCompatActivity(), KDataListener {
             SessionManagerUI.getInstance(this).karzaAadhaarFileContent = response.zipFileBase64
             SessionManagerUI.getInstance(this).karzaAadhaarFileCode = response.sharecode
             SessionManagerUI.getInstance(this).userStatusCode =
-                UserState.AADHARXML_SAVED_LOCAL.getValue()
+                UserStateUI.AADHARXML_SAVED_LOCAL.getValue()
         } else if (docType.equals("silent_liveness")) {
             var response: KarzaSelfieResponse =
                 com.payu.baas.coreUI.util.JsonUtil.toObject(builder, KarzaSelfieResponse::class.java) as KarzaSelfieResponse
@@ -82,15 +82,15 @@ class KarzaActivity : AppCompatActivity(), KDataListener {
                 response.image?.get(0)
             if (!(response.image?.get(0).isNullOrEmpty()))
                 SessionManagerUI.getInstance(this).userStatusCode =
-                    UserState.SELFIE_SAVED_LOCAL.getValue()
+                    UserStateUI.SELFIE_SAVED_LOCAL.getValue()
         } else if (docType.equals("from_pan")) {
 
         } else if (actionType == ActionType.REPORT_DATA) {
             SessionManagerUI.getInstance(this).karzaVerificationResponse = builder
             SessionManagerUI.getInstance(this).userStatusCode =
-                UserState.AADHARXML_SAVED_LOCAL.getValue()
+                UserStateUI.AADHARXML_SAVED_LOCAL.getValue()
         } else if (actionType == ActionType.END) { //docType contains value for which we working on like it will be liveness if working on selfie,
-            if (SessionManagerUI.getInstance(this).userStatusCode!!.equals(UserState.AADHARXML_SAVED_LOCAL))
+            if (SessionManagerUI.getInstance(this).userStatusCode!!.equals(UserStateUI.AADHARXML_SAVED_LOCAL))
                 SessionManager.getInstance(this).karzaTransactionId = null
             finish()
         } else if (actionType == ActionType.ERROR) {

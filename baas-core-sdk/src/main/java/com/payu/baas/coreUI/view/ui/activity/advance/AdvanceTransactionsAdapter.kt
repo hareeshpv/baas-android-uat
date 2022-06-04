@@ -11,8 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ItemAdvanceTransactionsBinding
-import com.payu.baas.core.model.model.AdvanceUsageHistory
-import com.payu.baas.coreUI.util.UtilsUI
+import com.payu.baas.coreUI.nonUI.model.model.AdvanceUsageHistory
 
 class AdvanceTransactionsAdapter internal constructor(
     private val listener: ItemClickListener

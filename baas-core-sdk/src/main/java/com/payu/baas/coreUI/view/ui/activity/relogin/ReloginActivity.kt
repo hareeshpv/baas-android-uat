@@ -10,11 +10,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityReloginBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.responseModels.SendOtpResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.SendOtpResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.*
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.otpverification.OTPVerificationActivity

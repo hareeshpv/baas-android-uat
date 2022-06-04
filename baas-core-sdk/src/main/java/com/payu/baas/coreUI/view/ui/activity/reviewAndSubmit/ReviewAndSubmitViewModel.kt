@@ -14,16 +14,15 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.ObservableField
 import androidx.lifecycle.*
 import com.payu.baas.coreUI.R
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.entities.model.PanDetailsModelUI
-import com.payu.baas.core.model.model.CardDeliveryAddressModel
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.model.CardDeliveryAddressModel
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.*
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.callback.BaseCallback
 import com.payu.baas.coreUI.view.ui.BaseViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -135,7 +134,7 @@ class ReviewAndSubmitViewModel(
                                 if (apiResponse is KYCAadharResponse) {
                                     kycAadhaarResponseObs.postValue(Resource.success(apiResponse))
                                     SessionManagerUI.getInstance(context).userStatusCode =
-                                        UserState.AADHARXML_SAVED.getValue()
+                                        UserStateUI.AADHARXML_SAVED.getValue()
                                     addKycResults()
                                 }
                             }
@@ -201,7 +200,7 @@ class ReviewAndSubmitViewModel(
                                                 )
                                             )
                                             SessionManagerUI.getInstance(context).userStatusCode =
-                                                UserState.LAT_LONG_IP_SAVED.getValue()
+                                                UserStateUI.LAT_LONG_IP_SAVED.getValue()
                                             saveUserSelfie()
 
                                         }
@@ -259,7 +258,7 @@ class ReviewAndSubmitViewModel(
                             override fun onSuccess(apiResponse: ApiResponse) {
                                 if (apiResponse is KYCSelfieResponse) {
                                     SessionManagerUI.getInstance(context).userStatusCode =
-                                        UserState.SELFIE_SAVED.getValue()
+                                        UserStateUI.SELFIE_SAVED.getValue()
                                     kycSelfieResponseObs.postValue(Resource.success(apiResponse))
                                     saveKYCAadhar()
                                 }
@@ -311,7 +310,7 @@ class ReviewAndSubmitViewModel(
                             applicationId = karzaVerificationResponse.applicationId
                             if (applicationId.isNullOrEmpty())
                                 applicationId =
-                                    com.payu.baas.core.storage.SessionManager.getInstance(context).applicationId
+                                    SessionManager.getInstance(context).applicationId
                             dob = karzaVerificationResponse.dobAadharXML!!.dob
                             if (!dob.isNullOrEmpty() && dob!!.contains("/")) {
                                 dob = UtilsUI.updateDateFormat(dob!!)
@@ -376,7 +375,7 @@ class ReviewAndSubmitViewModel(
                                             )
                                         )
                                         SessionManagerUI.getInstance(context).userStatusCode =
-                                            UserState.KYC_RESULT_SAVED.getValue()
+                                            UserStateUI.KYC_RESULT_SAVED.getValue()
                                         verifyKycResults()
                                     }
                                 }
@@ -419,7 +418,7 @@ class ReviewAndSubmitViewModel(
                                     verifyKycResponseObs.postValue(Resource.success(apiResponse))
                                     if (apiResponse.message.equals("YES")) {
                                         SessionManagerUI.getInstance(context).userStatusCode =
-                                            UserState.KYC_CHECKS_PASSED.getValue()
+                                            UserStateUI.KYC_CHECKS_PASSED.getValue()
                                         onBoardUserStatus()
                                     }
                                 }
@@ -541,28 +540,28 @@ class ReviewAndSubmitViewModel(
         )
         var userState = SessionManagerUI.getInstance(context).userStatusCode
         when (userState) {
-            UserState.KYC_SCREEN_PASSED.getValue(),
-            UserState.AADHARXML_SAVED_LOCAL.getValue() -> {
+            UserStateUI.KYC_SCREEN_PASSED.getValue(),
+            UserStateUI.AADHARXML_SAVED_LOCAL.getValue() -> {
                 saveKYCLocation()
             }
-            UserState.LAT_LONG_IP_SAVED.getValue() -> {
+            UserStateUI.LAT_LONG_IP_SAVED.getValue() -> {
                 saveUserSelfie()
             }
-            UserState.SELFIE_SAVED.getValue() -> {
+            UserStateUI.SELFIE_SAVED.getValue() -> {
                 saveKYCAadhar()
             }
-            UserState.AADHARXML_SAVED.getValue() -> {
+            UserStateUI.AADHARXML_SAVED.getValue() -> {
                 addKycResults()
             }
-            UserState.KYC_RESULT_SAVED.getValue() -> {
+            UserStateUI.KYC_RESULT_SAVED.getValue() -> {
                 verifyKycResults()
             }
-            UserState.KYC_CHECKS_PASSED.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS_1.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS_2.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS_3.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS_4.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS.getValue() -> {
+            UserStateUI.KYC_CHECKS_PASSED.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS_1.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS_2.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS_3.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS_4.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS.getValue() -> {
                 onBoardUserStatus()
             }
         }

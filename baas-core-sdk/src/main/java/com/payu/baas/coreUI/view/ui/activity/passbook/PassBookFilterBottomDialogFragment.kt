@@ -12,9 +12,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.LayoutPassbookFiltersBinding
-import com.payu.baas.coreUI.model.datasource.PassBookFilterDataSource
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.BaaSConstantsUI
 import com.payu.baas.coreUI.util.UtilsUI
 import java.util.*

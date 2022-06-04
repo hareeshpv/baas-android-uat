@@ -6,11 +6,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityAccountOpeningFailureScreenBinding
-import com.payu.baas.coreUI.model.entities.model.PanDetailsModelUI
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.BaaSConstantsUI
-import com.payu.baas.coreUI.util.JsonUtil
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.reviewAndSubmit.ReviewAndSubmitViewModel
 import java.util.*

@@ -63,7 +63,7 @@
 
                 <com.payu.baas.coreUI.view.viewExtension.CustomEdittext
                     android:id="@+id/etPinCode"
-                    android:layout_width="@dimen/_100sdp"
+                    android:layout_width="@dimen/sdp_100"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/pin_code"
                     android:inputType="number"

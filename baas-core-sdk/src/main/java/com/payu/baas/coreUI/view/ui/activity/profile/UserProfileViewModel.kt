@@ -4,18 +4,18 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.*
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.ApiCall
 import com.payu.baas.coreUI.util.ApiHelperUI
 import com.payu.baas.coreUI.util.BaaSConstantsUI
 import com.payu.baas.coreUI.util.BaaSConstantsUI.CL_USER_RESET_PASSCODE_BUTTON_CLICK
 import com.payu.baas.coreUI.util.Resource
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.callback.BaseCallback
 import com.payu.baas.coreUI.view.ui.BaseViewModel
 import com.payu.baas.coreUI.view.ui.activity.splash.SplashScreenActivity
@@ -164,7 +164,7 @@ class UserProfileViewModel (
                             if (apiResponse is LogoutResponse) {
                                 CL_USER_RESET_PASSCODE_BUTTON_CLICK = "0"
                                 userProfileResponseObs.postValue(Resource.success(apiResponse))
-                                SessionManagerUI.getInstance(context).userStatusCode = UserState.LOGGED_OUT.getValue()
+                                SessionManagerUI.getInstance(context).userStatusCode = UserStateUI.LOGGED_OUT.getValue()
                                 baseCallBack!!.callNextScreen(Intent(context, SplashScreenActivity::class.java), null)
 
                             }

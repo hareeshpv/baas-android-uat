@@ -12,14 +12,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivitySetPasscodeBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.responseModels.SetPasswordResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.SetPasswordResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.*
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.enterpasscode.PasscodeActivity
 import java.util.*
@@ -421,7 +420,7 @@ class SetPasscodeActivity : BaseActivity() {
                         it.data?.let {
                             if (it is SetPasswordResponse) {
                                 SessionManagerUI.getInstance(this).userStatusCode =
-                                    UserState.PASSCODE_SET.getValue()
+                                    UserStateUI.PASSCODE_SET.getValue()
                                 SessionManagerUI.getInstance(applicationContext).oldPasscode =
                                     oldPasscode
                                 viewModel.baseCallBack!!.cleverTapUserOnBoardingEvent(

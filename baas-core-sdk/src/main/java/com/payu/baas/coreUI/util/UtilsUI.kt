@@ -29,7 +29,7 @@ import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYouListener
 import com.google.android.material.snackbar.Snackbar
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.view.callback.ImageLoadingListener
 import com.payu.baas.coreUI.view.ui.snackbaar.SimpleCustomSnackbar
 import java.text.DecimalFormat

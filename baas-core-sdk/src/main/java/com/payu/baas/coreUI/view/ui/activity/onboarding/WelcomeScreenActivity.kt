@@ -7,9 +7,9 @@ import androidx.databinding.DataBindingUtil
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityWelcomeScreenBinding
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.BaaSConstantsUI
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.callback.BaseCallback
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.set_passcode.SetPasscodeActivity
@@ -39,7 +39,7 @@ class WelcomeScreenActivity : BaseActivity() {
 
     fun next(view: View) {
         SessionManagerUI.getInstance(this).userStatusCode =
-            UserState.WELCOM_SCREEN_REACHED.getValue()
+            UserStateUI.WELCOM_SCREEN_REACHED.getValue()
         callNextScreen(Intent(this, SetPasscodeActivity::class.java), null,true)
     }
 

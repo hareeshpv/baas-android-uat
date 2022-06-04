@@ -86,7 +86,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/text_color"
                 android:textCursorDrawable="@drawable/bg_cursor"
-                android:textSize="@dimen/_26sdp"
+                android:textSize="@dimen/dp_26"
                 app:custFont="@string/app_font_semi_bold" />
 
             <com.payu.baas.coreUI.view.viewExtension.CustomPasscodeEditText
@@ -221,7 +221,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/llReEnterPasscode"
             android:layout_centerInParent="true"
-            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/dp_12"
             android:gravity="center"
             android:textAlignment="center"
             android:textAllCaps="false"
@@ -235,10 +235,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/error_message"
             android:layout_centerInParent="true"
-            android:layout_marginLeft="@dimen/_24sdp"
-            android:layout_marginTop="@dimen/_59sdp"
-            android:layout_marginRight="@dimen/_24sdp"
-            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_24"
+            android:layout_marginBottom="@dimen/dp_25"
             android:text="@string/yeh_passcode_apse_login_krne_k_liye_puchha_jayega_jisse_apka_data_surakshit_rahega"
             android:textAlignment="center"
             android:textAllCaps="false"

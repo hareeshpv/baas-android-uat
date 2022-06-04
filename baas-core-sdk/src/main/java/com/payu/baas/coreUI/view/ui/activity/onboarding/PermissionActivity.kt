@@ -16,7 +16,7 @@ import com.payu.baas.coreUI.databinding.ActivityPermissionBinding
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
 import com.payu.baas.coreUI.util.BaaSConstantsUI
 import com.payu.baas.coreUI.util.GPSTracker
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.mobileverification.MobileVerificationActivity
 import com.payu.baas.coreUI.view.ui.activity.webView.WebViewActivity
@@ -62,7 +62,7 @@ class PermissionActivity : BaseActivity() {
 
                 SessionManagerUI.getInstance(applicationContext).permissionResult = "1"
                 SessionManagerUI.getInstance(applicationContext).userStatusCode =
-                    UserState.PERMISSION_ASSIGNED.getValue()
+                    UserStateUI.PERMISSION_ASSIGNED.getValue()
                 callNextScreen(Intent(this, MobileVerificationActivity::class.java), null)
                 finish()
             } else {
@@ -137,7 +137,7 @@ class PermissionActivity : BaseActivity() {
 
                 SessionManagerUI.getInstance(applicationContext).permissionResult = "1"
                 SessionManagerUI.getInstance(applicationContext).userStatusCode =
-                    UserState.PERMISSION_ASSIGNED.getValue()
+                    UserStateUI.PERMISSION_ASSIGNED.getValue()
                 callNextScreen(Intent(this, MobileVerificationActivity::class.java), null)
                 finish()
             } else {
@@ -170,7 +170,7 @@ class PermissionActivity : BaseActivity() {
 //            } else {
 //                SessionManagerUI.getInstance(applicationContext).permissionResult = "1"
 //                SessionManagerUI.getInstance(applicationContext).userStatusCode =
-//                    UserState.PERMISSION_ASSIGNED.getValue()
+//                    UserStateUI.PERMISSION_ASSIGNED.getValue()
 //                callNextScreen(Intent(this, MobileVerificationActivity::class.java), null)
 //                finish()
 //            }

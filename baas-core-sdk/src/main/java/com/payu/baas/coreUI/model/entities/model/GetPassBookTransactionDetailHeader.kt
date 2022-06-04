@@ -1,7 +1,7 @@
 package com.payu.baas.coreUI.model.entities.model
 
 import com.google.gson.annotations.SerializedName
-import com.payu.baas.core.model.responseModels.GetPassBookTransactionDetails
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetPassBookTransactionDetails
 
 class GetPassBookTransactionDetailHeader {
 

@@ -13,10 +13,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.LayoutAdvanceWeeklyTransactionDetailsBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.model.AdvanceUsageHistory
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.model.AdvanceUsageHistory
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetPassBookTransactionDetails
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetPassBookTransactionsResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.TransactionDetailsResponse
 import com.payu.baas.coreUI.util.*
 import com.payu.baas.coreUI.view.callback.ClickHandler
 

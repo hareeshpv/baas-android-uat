@@ -9,12 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityCardDeliveryAddressDetailBinding
-import com.payu.baas.core.model.model.CardDeliveryAddressModel
+import com.payu.baas.coreUI.nonUI.model.model.CardDeliveryAddressModel
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.BaaSConstantsUI
-import com.payu.baas.coreUI.util.JsonUtil
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import java.util.*
 
@@ -103,7 +102,7 @@ class CardDeliveryAddressDetailActivity : BaseActivity() {
         SessionManagerUI.getInstance(this).cardDeliveryAddress =
             com.payu.baas.coreUI.util.JsonUtil.toString(cardDeliveryAddress)
         SessionManagerUI.getInstance(this).userStatusCode =
-            UserState.CARD_DELIVERY_ADDRESS_SAVED_LOCAL.getValue()
+            UserStateUI.CARD_DELIVERY_ADDRESS_SAVED_LOCAL.getValue()
         finish()
     }
 

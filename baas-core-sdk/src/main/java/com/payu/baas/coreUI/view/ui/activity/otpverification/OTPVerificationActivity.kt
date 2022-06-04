@@ -14,19 +14,18 @@ import com.google.android.material.snackbar.Snackbar
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.R.drawable
 import com.payu.baas.coreUI.databinding.ActivityOtpverificationBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.responseModels.SendOtpResponse
-import com.payu.baas.core.model.responseModels.VerifyOtpResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.SendOtpResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.VerifyOtpResponse
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.ui.activity.kyc.CompleteKYCActivity
 import com.payu.baas.coreUI.view.ui.activity.mobileverification.MobileVerificationActivity
 import com.payu.baas.coreUI.view.ui.snackbaar.SimpleCustomSnackbar
 import java.util.*
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.*
 
 
@@ -415,9 +414,9 @@ class OTPVerificationActivity : BaseActivity() {
 //                                        mobileNumber,
 //                                        Date()
 //                                    )
-                                    if (SessionManagerUI.getInstance(this).userStatusCode == UserState.PERMISSION_ASSIGNED.getValue())
+                                    if (SessionManagerUI.getInstance(this).userStatusCode == UserStateUI.PERMISSION_ASSIGNED.getValue())
                                         SessionManagerUI.getInstance(this).userStatusCode =
-                                            UserState.MOBILE_VERIFIED.getValue()
+                                            UserStateUI.MOBILE_VERIFIED.getValue()
                                     callNextScreen(
                                         Intent(applicationContext, CompleteKYCActivity::class.java),
                                         null, true

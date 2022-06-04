@@ -10,11 +10,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityPasscodeBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.responseModels.LoginResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.responseModels.LoginResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
 import com.payu.baas.coreUI.util.BaaSConstantsUI
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.dashboard.DashboardActivity
 import com.payu.baas.coreUI.view.ui.activity.panvalidate.VerifyPANCardNumberActivity
@@ -22,10 +22,8 @@ import java.util.*
 
 import android.text.InputType
 import android.view.inputmethod.EditorInfo
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.storage.SessionManager
-import com.payu.baas.core.util.*
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.BaaSConstantsUI.CL_USER_FORGOT_PASSCODE_TEXT_CLICK
 import com.payu.baas.coreUI.util.BaaSConstantsUI.CL_USER_RESET_PASSCODE_BUTTON_CLICK
 import com.payu.baas.coreUI.util.Resource
@@ -203,7 +201,7 @@ class PasscodeActivity : BaseActivity() {
             return
         }
         SessionManagerUI.getInstance(this).userStatusCode =
-            UserState.LOGIN_DONE.getValue()
+            UserStateUI.LOGIN_DONE.getValue()
         if (CL_USER_RESET_PASSCODE_BUTTON_CLICK == "1") {
             callNextScreen(Intent(applicationContext, ResetPasscodeActivity::class.java), null)
             finish()

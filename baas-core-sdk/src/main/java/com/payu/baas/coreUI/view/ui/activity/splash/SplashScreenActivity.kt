@@ -10,13 +10,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivitySplashScreenBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.responseModels.GetUserStateResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetUserStateResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
 import com.payu.baas.coreUI.util.*
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.ui.BaseActivity
 
 class SplashScreenActivity : BaseActivity() {
@@ -33,7 +32,7 @@ class SplashScreenActivity : BaseActivity() {
         var userState = SessionManagerUI.getInstance(this).userStatusCode.toString()
         if (userState.isNullOrEmpty() || userState == "null") {
             if (userRegisteredNumber.isNullOrEmpty() || userRegisteredNumber.equals("null"))
-                setupUI(UserState.MOBILE_NOT_SUBMITTED.getValue())
+                setupUI(UserStateUI.MOBILE_NOT_SUBMITTED.getValue())
             else
                 viewModel.getUserState(userRegisteredNumber)
         } else {
@@ -92,7 +91,7 @@ class SplashScreenActivity : BaseActivity() {
                         it.data?.let {
                             if (it is GetUserStateResponse) {
                                 if (it.message.isNullOrEmpty()) // right now we are not having logout so getting this as not clearing data in testing mode after crash or anything.
-                                    setupUI(UserState.MOBILE_NOT_SUBMITTED.getValue())  // so added this check
+                                    setupUI(UserStateUI.MOBILE_NOT_SUBMITTED.getValue())  // so added this check
                                 else
                                     setupUI(it.message!!)
                             }
@@ -151,7 +150,7 @@ class SplashScreenActivity : BaseActivity() {
 //                            ) {
 //                                viewModel.reGenerateAccessToken(true)
 //                            } else {
-//                                setupUI(UserState.MOBILE_NOT_SUBMITTED.getValue())
+//                                setupUI(UserStateUI.MOBILE_NOT_SUBMITTED.getValue())
 //                            }
 //
 //                        }

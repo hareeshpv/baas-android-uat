@@ -8,7 +8,7 @@
 
         <variable
             name="ifscDetails"
-            type="com.payu.baas.core.model.model.IFSCDetailsModel" />
+            type="com.payu.baas.coreUI.nonUI.model.model.IFSCDetailsModel" />
 
         <variable
             name="viewModel"

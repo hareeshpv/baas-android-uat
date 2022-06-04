@@ -1,0 +1,8 @@
+package com.payu.baas.coreUI.nonUI.model.responseModels
+
+import com.google.gson.annotations.SerializedName
+
+class ValidateCardKitResponse : ApiResponse() {
+    @SerializedName("validated")
+    var validated: Boolean? = null
+}

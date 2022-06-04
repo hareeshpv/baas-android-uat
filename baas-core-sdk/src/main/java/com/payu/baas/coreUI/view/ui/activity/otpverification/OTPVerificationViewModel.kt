@@ -6,14 +6,14 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.ObservableField
 import androidx.lifecycle.*
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.ApiResponse
-import com.payu.baas.core.model.responseModels.SendOtpResponse
-import com.payu.baas.core.model.responseModels.VerifyOtpResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
+import com.payu.baas.coreUI.nonUI.model.responseModels.ApiResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.SendOtpResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.VerifyOtpResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.ApiCall
 import com.payu.baas.coreUI.util.ApiHelperUI
 import com.payu.baas.coreUI.util.BaaSConstantsUI
@@ -84,7 +84,8 @@ class OTPVerificationViewModel(baseCallBack: BaseCallback?, context: Context
         }
     }
     fun resendOtp() {
-        baseCallBack!!.cleverTapUserOnBoardingEvent(BaaSConstantsUI.CL_USER_RESEND_OTP,BaaSConstantsUI.CL_USER_RESEND_OTP_VERIFICATION_EVENT_ID,SessionManager.getInstance(context).accessToken,imeiNumber,mobileNo_, Date())
+        baseCallBack!!.cleverTapUserOnBoardingEvent(BaaSConstantsUI.CL_USER_RESEND_OTP,BaaSConstantsUI.CL_USER_RESEND_OTP_VERIFICATION_EVENT_ID,
+            SessionManager.getInstance(context).accessToken,imeiNumber,mobileNo_, Date())
         if(! baseCallBack!!.isInternetAvailable(false)){
             val mBundle = Bundle()
             mBundle.putInt(BaaSConstantsUI.BS_KEY_ERROR_TYPE, ErrorType.NO_INTERNET.ordinal)

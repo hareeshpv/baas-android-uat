@@ -6,10 +6,11 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.ObservableField
 import androidx.lifecycle.*
 import com.payu.baas.coreUI.R
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
+import com.payu.baas.coreUI.nonUI.model.responseModels.ApiResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetAddressResponse
 import com.payu.baas.coreUI.util.*
 import com.payu.baas.coreUI.view.callback.BaseCallback
 import com.payu.baas.coreUI.view.ui.BaseViewModel

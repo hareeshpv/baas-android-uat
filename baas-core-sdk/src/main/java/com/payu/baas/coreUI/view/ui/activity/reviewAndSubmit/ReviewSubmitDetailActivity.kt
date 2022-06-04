@@ -18,13 +18,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityReviewSubmitDetailBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetOnBoardUserStatusResponse
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.*
-import com.payu.baas.coreUI.util.enums.UserState
+import com.payu.baas.coreUI.util.enums.UserStateUI
 import com.payu.baas.coreUI.view.ui.BaseActivity
 import com.payu.baas.coreUI.view.ui.activity.accountopeningfailure.AccountOpeningFailureScreenActivity
 import com.payu.baas.coreUI.view.ui.activity.onboarding.WelcomeScreenActivity
@@ -129,10 +129,10 @@ class ReviewSubmitDetailActivity : BaseActivity() {
                         it.data?.let {
                             if (it is GetOnBoardUserStatusResponse) {
                                 var message = it.message
-//                                if (message!!.equals(com.payu.baas.core.util.enums.UserState.ONBOARDING_IN_PROGRESS.getValue())) {
+//                                if (message!!.equals(com.payu.baas.core.util.enums.UserStateUI.ONBOARDING_IN_PROGRESS.getValue())) {
 //                                    viewModel.onBoardUserStatus()
 //                                } else
-                                if (message!!.equals(com.payu.baas.coreUI.util.enums.UserState.ONBOARDING_SUCCESS.getValue())) {
+                                if (message!!.equals(com.payu.baas.coreUI.util.enums.UserStateUI.ONBOARDING_SUCCESS.getValue())) {
 //                                    viewModel.hideCustomProgress()
                                     viewModel.baseCallBack?.callNextScreen(
                                         Intent(
@@ -140,7 +140,7 @@ class ReviewSubmitDetailActivity : BaseActivity() {
                                             WelcomeScreenActivity::class.java
                                         ), null, true
                                     )
-                                } else if (message!!.equals(com.payu.baas.coreUI.util.enums.UserState.ONBOARDING_FAILED.getValue())) {
+                                } else if (message!!.equals(com.payu.baas.coreUI.util.enums.UserStateUI.ONBOARDING_FAILED.getValue())) {
 //                                    viewModel.hideCustomProgress()
                                     var bundle = Bundle()
                                     bundle.putString(
@@ -192,7 +192,7 @@ class ReviewSubmitDetailActivity : BaseActivity() {
                                 ) as com.payu.baas.coreUI.model.ErrorResponseUI
                                 if (apiName == ApiName.VERIFY_KYC_RESULTS && errorUiRes.systemMessage.equals("FAILURE")) {
                                         SessionManagerUI.getInstance(this).userStatusCode =
-                                            UserState.KYC_CHECKS_FAILED.getValue()
+                                            UserStateUI.KYC_CHECKS_FAILED.getValue()
                                     var bundle = Bundle()
                                     bundle.putString(
                                         BaaSConstantsUI.ACCOUNT_FAILURE_REASON_KEY,
@@ -457,11 +457,11 @@ class ReviewSubmitDetailActivity : BaseActivity() {
         super.onResume()
         val userState = SessionManagerUI.getInstance(this).userStatusCode
         when (userState) {
-            UserState.KYC_CHECKS_PASSED.getValue(),
-            UserState.ONBOARDING_IN_PROGRESS.getValue() -> {
+            UserStateUI.KYC_CHECKS_PASSED.getValue(),
+            UserStateUI.ONBOARDING_IN_PROGRESS.getValue() -> {
                 viewModel.onBoardUserStatus()
             }
-            UserState.KYC_CHECKS_FAILED.getValue() -> {
+            UserStateUI.KYC_CHECKS_FAILED.getValue() -> {
                 viewModel.verifyKycResults()
             }
 //            else -> {

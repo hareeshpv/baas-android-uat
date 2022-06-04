@@ -207,9 +207,9 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/every_month"
                             android:layout_centerInParent="true"
-                            android:layout_marginLeft="@dimen/_30sdp"
+                            android:layout_marginLeft="@dimen/sdp_30"
                             android:layout_marginTop="@dimen/petrol_offer_margin_top"
-                            android:layout_marginRight="@dimen/_30sdp"
+                            android:layout_marginRight="@dimen/sdp_30"
                             android:adjustViewBounds="true"
                             android:scaleType="fitXY"
                             android:src="@drawable/ic_plain_credit_card" />

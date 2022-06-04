@@ -15,8 +15,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.gson.Gson
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.BottomSheetDialogAddMoneyBinding
-import com.payu.baas.core.model.responseModels.GetAccountDetailsResponse
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetAccountDetailsResponse
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.BaaSConstantsUI
 import com.payu.baas.coreUI.util.BaaSConstantsUI.ARGUMENTS_IMEI
 import com.payu.baas.coreUI.util.BaaSConstantsUI.ARGUMENTS_MOBILE_NUMBER

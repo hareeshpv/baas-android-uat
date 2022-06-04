@@ -56,9 +56,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/title"
-                    android:layout_marginLeft="@dimen/_24sdp"
+                    android:layout_marginLeft="@dimen/dp_24"
                     android:layout_marginTop="@dimen/permission_message_margin_top"
-                    android:layout_marginRight="@dimen/_14sdp"
+                    android:layout_marginRight="@dimen/dp_14"
                     android:text="@string/hum_promise_krte_hai_apka_data_hamare_pass_surakshit_rhega_or_uska_koi_misuse_nhi_hoga"
                     android:textAllCaps="false"
                     android:textColor="@color/permission_text_color"
@@ -182,7 +182,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/call_message"
-                    android:layout_marginTop="@dimen/_104sdp"
+                    android:layout_marginTop="@dimen/dp_100"
                     android:gravity="center"
                     android:orientation="horizontal">
 
@@ -194,39 +194,39 @@
                         android:text="@string/privacy_policy"
                         android:textAllCaps="false"
                         android:textColor="@color/text_color"
-                        android:textSize="@dimen/_15sdp"
+                        android:textSize="@dimen/dp_15"
                         app:custFont="@string/app_font_semi_bold" />
 
                     <com.payu.baas.coreUI.view.viewExtension.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/dp_5"
                         android:text="@string/and"
                         android:textAllCaps="false"
                         android:textColor="@color/text_color"
-                        android:textSize="@dimen/_16sdp"
+                        android:textSize="@dimen/dp_16"
                         app:custFont="@string/app_font_semi_bold" />
 
                     <com.payu.baas.coreUI.view.viewExtension.CustomGradientTextView
                         android:id="@+id/terms_condition"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_6sdp"
+                        android:layout_marginLeft="@dimen/dp_6"
                         android:onClick="termsCondition"
                         android:text="@string/terms_condition"
                         android:textAllCaps="false"
                         android:textColor="@color/text_color"
-                        android:textSize="@dimen/_15sdp"
+                        android:textSize="@dimen/dp_15"
                         app:custFont="@string/app_font_semi_bold" />
 
                     <com.payu.baas.coreUI.view.viewExtension.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_6sdp"
+                        android:layout_marginLeft="@dimen/dp_6"
                         android:text="@string/apply"
                         android:textAllCaps="false"
                         android:textColor="@color/text_color"
-                        android:textSize="@dimen/_16sdp"
+                        android:textSize="@dimen/dp_16"
                         app:custFont="@string/app_font_semi_bold" />
                 </LinearLayout>
 

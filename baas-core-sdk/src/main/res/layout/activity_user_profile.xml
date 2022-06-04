@@ -182,13 +182,13 @@
                                 android:text="@string/profile_help"
                                 android:textColor="@color/text_color"
                                 android:textSize="@dimen/screen_sub_title"
-                                android:padding="@dimen/_5sdp"
+                                android:padding="@dimen/dp_5"
                                 app:custFont="@string/app_font_semi_bold" />
 
                             <ImageView
                                 android:id="@+id/ivHelpNext"
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_25sdp"
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
                                 android:layout_marginLeft="@dimen/main_padding"
                                 android:background="@drawable/black_dark_circle_bg"
                                 android:padding="@dimen/card_icon_padding"
@@ -223,15 +223,15 @@
                                 android:layout_marginLeft="@dimen/main_padding"
                                 android:layout_weight="1"
                                 android:text="@string/rates_amp_charges"
-                                android:padding="@dimen/_5sdp"
+                                android:padding="@dimen/dp_5"
                                 android:textColor="@color/text_color"
                                 android:textSize="@dimen/screen_sub_title"
                                 app:custFont="@string/app_font_semi_bold" />
 
                             <ImageView
                                 android:id="@+id/ivRatesChargesNext"
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_25sdp"
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
                                 android:layout_marginLeft="@dimen/main_padding"
                                 android:background="@drawable/black_dark_circle_bg"
                                 android:padding="@dimen/card_icon_padding"
@@ -318,13 +318,13 @@
                                 android:text="@string/manage_payees"
                                 android:textColor="@color/text_color"
                                 android:textSize="@dimen/screen_sub_title"
-                                android:padding="@dimen/_5sdp"
+                                android:padding="@dimen/dp_5"
                                 app:custFont="@string/app_font_semi_bold" />
 
                             <ImageView
                                 android:id="@+id/ivManagePayeesNext"
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_25sdp"
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
                                 android:layout_marginLeft="@dimen/main_padding"
                                 android:background="@drawable/black_dark_circle_bg"
                                 android:padding="@dimen/card_icon_padding"
@@ -362,13 +362,13 @@
                                 android:text="@string/change_passcode"
                                 android:textColor="@color/text_color"
                                 android:textSize="@dimen/screen_sub_title"
-                                android:padding="@dimen/_5sdp"
+                                android:padding="@dimen/dp_5"
                                 app:custFont="@string/app_font_semi_bold" />
 
                             <ImageView
                                 android:id="@+id/ivChangePinNext"
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_25sdp"
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
                                 android:layout_marginLeft="@dimen/main_padding"
                                 android:background="@drawable/black_dark_circle_bg"
                                 android:padding="@dimen/card_icon_padding"
@@ -406,15 +406,15 @@
                                 android:layout_marginLeft="@dimen/main_padding"
                                 android:layout_weight="1"
                                 android:text="@string/my_account_details"
-                                android:padding="@dimen/_5sdp"
+                                android:padding="@dimen/dp_5"
                                 android:textColor="@color/text_color"
                                 android:textSize="@dimen/screen_sub_title"
                                 app:custFont="@string/app_font_semi_bold" />
 
                             <ImageView
                                 android:id="@+id/ivAddMoneyToSalaryAccountNext"
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_25sdp"
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
                                 android:layout_marginLeft="@dimen/main_padding"
                                 android:background="@drawable/black_dark_circle_bg"
                                 android:padding="@dimen/card_icon_padding"
@@ -453,15 +453,15 @@
                                 android:layout_marginLeft="@dimen/main_padding"
                                 android:layout_weight="1"
                                 android:text="@string/log_out"
-                                android:padding="@dimen/_5sdp"
+                                android:padding="@dimen/dp_5"
                                 android:textColor="@color/text_color"
                                 android:textSize="@dimen/screen_sub_title"
                                 app:custFont="@string/app_font_semi_bold" />
 
                             <ImageView
                                 android:id="@+id/ivLogoutNext"
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_25sdp"
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
                                 android:layout_marginLeft="@dimen/main_padding"
                                 android:background="@drawable/black_dark_circle_bg"
                                 android:padding="@dimen/card_icon_padding"

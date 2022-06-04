@@ -100,7 +100,7 @@
                     app:custFont="@string/app_font_regular" />
 
                 <ImageView
-                    android:layout_width="@dimen/_18sdp"
+                    android:layout_width="@dimen/sdp_18"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:scaleType="fitXY"
@@ -133,14 +133,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/main_padding"
-            android:layout_marginTop="@dimen/_36sdp"
+            android:layout_marginTop="@dimen/dp_36"
             android:layout_marginRight="@dimen/main_padding"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
                 android:adjustViewBounds="true"
                 android:src="@drawable/ic_phone_icon" />
 
@@ -151,7 +151,7 @@
                 android:layout_weight="1"
                 android:id="@+id/mobileNumber"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/_16sdp"
+                android:textSize="@dimen/dp_16"
                 android:text="@{viewModel.userMobileNumber}"
                 app:custFont="@string/app_font_semi_bold" />
 
@@ -163,11 +163,11 @@
             android:layout_marginLeft="@dimen/main_padding"
             android:layout_marginRight="@dimen/main_padding"
             android:layout_marginBottom="@dimen/normal_padding"
-            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/dp_25"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_25sdp"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
                 android:adjustViewBounds="true"
                 android:src="@drawable/ic_location" />
 <LinearLayout
@@ -181,7 +181,7 @@
         android:layout_marginLeft="@dimen/main_padding"
         android:text="@string/current_address_title"
         android:textColor="@color/text_color"
-        android:textSize="@dimen/_16sdp"
+        android:textSize="@dimen/dp_16"
         android:alpha=".5"
         app:custFont="@string/app_font_semi_bold" />
     <com.payu.baas.coreUI.view.viewExtension.CustomTextView
@@ -190,7 +190,7 @@
         android:layout_marginLeft="@dimen/main_padding"
         android:layout_marginTop="5dp"
         android:textColor="@color/text_color"
-        android:textSize="@dimen/_16sdp"
+        android:textSize="@dimen/dp_16"
         android:id="@+id/complete_address"
         android:text="@{viewModel.userCurrentAddress}"
         app:custFont="@string/app_font_semi_bold" />
@@ -206,7 +206,7 @@
                 android:onClick="edit_current_address"
                 android:textColor="@color/green_dark"
                 android:padding="@dimen/card_icon_padding"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/dp_15"
                 app:custFont="@string/app_font_bold"
                 />
         </LinearLayout>
@@ -214,14 +214,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/main_padding"
-            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/dp_24"
             android:gravity="center_vertical"
             android:layout_marginLeft="@dimen/main_padding"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_25sdp"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
                 android:adjustViewBounds="true"
                 android:src="@drawable/ic_aadhar" />
 
@@ -237,7 +237,7 @@
                     android:layout_marginLeft="@dimen/main_padding"
                     android:text="@string/pan_card"
                     android:textColor="@color/text_color"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="@dimen/dp_16"
                     android:alpha=".5"
                     app:custFont="@string/app_font_semi_bold" />
                 <com.payu.baas.coreUI.view.viewExtension.CustomTextView
@@ -248,7 +248,7 @@
                     android:id="@+id/panCard"
                     android:text="@{viewModel.userPANCardNumber}"
                     android:textColor="@color/text_color"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="@dimen/dp_16"
                     android:layout_marginBottom="@dimen/normal_padding"
                     app:custFont="@string/app_font_semi_bold" />
             </LinearLayout>
@@ -258,14 +258,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/main_padding"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_24"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_25sdp"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
                 android:adjustViewBounds="true"
                 android:src="@drawable/ic_aadhar" />
 
@@ -282,14 +282,14 @@
                     android:text="@string/aadhar_card"
                     android:alpha=".5"
                     android:textColor="@color/text_color"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="@dimen/dp_16"
                     app:custFont="@string/app_font_semi_bold" />
                 <com.payu.baas.coreUI.view.viewExtension.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/main_padding"
                     android:textColor="@color/text_color"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="@dimen/dp_16"
                     android:layout_marginTop="@dimen/min_padding"
                     android:id="@+id/aadharCard"
                     android:text="@{viewModel.userAdharCardNumber}"

@@ -9,12 +9,11 @@ import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityMyDetailsBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.responseModels.GetUserDetailsResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.GetUserDetailsResponse
 import com.payu.baas.coreUI.model.storage.SessionManagerUI
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.*
 import com.payu.baas.coreUI.util.BaaSConstantsUI.EDIT_ADDRESS_SNACKBAR_FLAG_KEY
 import com.payu.baas.coreUI.view.ui.BaseActivity

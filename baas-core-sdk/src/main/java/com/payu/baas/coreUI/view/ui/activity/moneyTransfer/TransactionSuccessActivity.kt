@@ -8,10 +8,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.gson.Gson
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.ActivityTransactionSuccessBinding
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.coreUI.model.ErrorResponseUI
-import com.payu.baas.core.model.responseModels.TransactionDetailsResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.TransactionDetailsResponse
 import com.payu.baas.coreUI.util.*
 import com.payu.baas.coreUI.view.callback.AlertDialogMultipleCallback
 import com.payu.baas.coreUI.view.callback.ClickHandler

@@ -2,10 +2,10 @@ package com.payu.baas.coreUI.view.ui.activity.dashboard
 
 import android.content.Context
 import androidx.lifecycle.*
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
+import com.payu.baas.coreUI.nonUI.model.responseModels.*
 import com.payu.baas.coreUI.util.ApiCall
 import com.payu.baas.coreUI.util.ApiHelperUI
 import com.payu.baas.coreUI.util.Resource

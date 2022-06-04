@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.payu.baas.coreUI.R
 import com.payu.baas.coreUI.databinding.AdapterOffersBinding
-import com.payu.baas.core.model.model.OfferDetails
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.model.model.OfferDetails
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.view.callback.ItemClickListener
 
 class OffersAdapter internal constructor(

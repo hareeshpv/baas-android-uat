@@ -2,10 +2,12 @@ package com.payu.baas.coreUI.view.ui.activity.cardUpdatePin
 
 import android.content.Context
 import androidx.lifecycle.*
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.*
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
+import com.payu.baas.coreUI.nonUI.model.responseModels.ApiResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.CardSetPinResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.UpdateCardPinSetStatusResponse
 import com.payu.baas.coreUI.util.*
 import com.payu.baas.coreUI.view.callback.BaseCallback
 import com.payu.baas.coreUI.view.ui.BaseViewModel

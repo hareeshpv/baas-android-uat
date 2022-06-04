@@ -1,13 +1,12 @@
 package com.payu.baas.coreUI.util
 
-import com.payu.baas.core.BaaSSDK
-import com.payu.baas.coreUI.app.BaasUIApp
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.interfaces.SdkCallback
-import com.payu.baas.core.model.ApiDetails
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.ApiResponse
+import com.payu.baas.coreUI.nonUI.BaaSSDK
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.interfaces.SdkCallback
+import com.payu.baas.coreUI.nonUI.model.ApiDetails
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
+import com.payu.baas.coreUI.nonUI.model.responseModels.ApiResponse
 
 class ApiCall {
 

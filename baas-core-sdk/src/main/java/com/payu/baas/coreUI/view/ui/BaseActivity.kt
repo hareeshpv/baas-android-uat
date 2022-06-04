@@ -29,9 +29,8 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.clevertap.android.sdk.CleverTapAPI
 import com.payu.baas.coreUI.R
-import com.payu.baas.coreUI.app.BaasUIApp
 import com.payu.baas.coreUI.databinding.DialogConfirmationBinding
-import com.payu.baas.core.storage.SessionManager
+import com.payu.baas.coreUI.nonUI.storage.SessionManager
 import com.payu.baas.coreUI.util.BaaSConstantsUI
 import com.payu.baas.coreUI.util.enums.ErrorType
 import com.payu.baas.coreUI.view.callback.AlertDialogMultipleCallback

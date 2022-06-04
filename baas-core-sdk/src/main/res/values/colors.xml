@@ -64,7 +64,7 @@
     <color name="offer_background">#F2F2F2</color>
     <!--<color name="highlight_text_color">#99B5DDDA</color>-->
 
-
+    <item name="colorPrimaryDark" type="color">@color/green_dark</item>
     <color name="black_russian">#181A20</color>
     <color name="cinder">#1D2026</color>
     <color name="black_opacity_12">#1F000000</color>
@@ -81,5 +81,5 @@
     <color name="alert_overlay">#CCF2F2F2</color>
 
     <color name="bg_selected_radio_color">#23BC8D</color>
-
+    <color name="orange">#FD6907</color>
 </resources>

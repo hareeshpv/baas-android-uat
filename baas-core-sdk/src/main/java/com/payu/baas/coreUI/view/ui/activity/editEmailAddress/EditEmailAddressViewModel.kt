@@ -5,11 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.ObservableField
 import androidx.lifecycle.*
-import com.payu.baas.core.enums.ApiName
-import com.payu.baas.core.model.ErrorResponse
-import com.payu.baas.core.model.params.ApiParams
-import com.payu.baas.core.model.responseModels.ApiResponse
-import com.payu.baas.core.model.responseModels.UpdateEmailResponse
+import com.payu.baas.coreUI.nonUI.enums.ApiName
+import com.payu.baas.coreUI.nonUI.model.ErrorResponse
+import com.payu.baas.coreUI.nonUI.model.params.ApiParams
+import com.payu.baas.coreUI.nonUI.model.responseModels.ApiResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.UpdateEmailResponse
 import com.payu.baas.coreUI.util.ApiCall
 import com.payu.baas.coreUI.util.ApiHelperUI
 import com.payu.baas.coreUI.util.BaaSConstantsUI

@@ -1,7 +1,7 @@
 package com.payu.baas.coreUI.model
 
 import com.google.gson.annotations.SerializedName
-import com.payu.baas.core.model.responseModels.ApiResponse
+import com.payu.baas.coreUI.nonUI.model.responseModels.ApiResponse
 
 
 class ErrorResponseUI: ApiResponse(){

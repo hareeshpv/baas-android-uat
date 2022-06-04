@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginLeft="@dimen/_37sdp"
-        android:layout_marginRight="@dimen/_37sdp"
-        android:layout_marginTop="@dimen/_49sdp"
+        android:layout_marginLeft="@dimen/dp_37"
+        android:layout_marginRight="@dimen/dp_37"
+        android:layout_marginTop="@dimen/dp_49"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="0dp"
@@ -43,9 +43,9 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginLeft="@dimen/_37sdp"
-        android:layout_marginRight="@dimen/_37sdp"
-        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginLeft="@dimen/dp_37"
+        android:layout_marginRight="@dimen/dp_37"
+        android:layout_marginTop="@dimen/dp_32"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="0dp"
@@ -75,10 +75,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_marginLeft="@dimen/_37sdp"
+        android:layout_marginLeft="@dimen/dp_37"
         android:gravity="center"
-        android:layout_marginRight="@dimen/_37sdp"
-        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginRight="@dimen/dp_37"
+        android:layout_marginTop="@dimen/dp_32"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="0dp"
@@ -109,10 +109,10 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginLeft="@dimen/_37sdp"
-        android:layout_marginRight="@dimen/_37sdp"
-        android:layout_marginTop="@dimen/_36sdp"
-        android:layout_marginBottom="@dimen/_36sdp"
+        android:layout_marginLeft="@dimen/dp_37"
+        android:layout_marginRight="@dimen/dp_37"
+        android:layout_marginTop="@dimen/dp_36"
+        android:layout_marginBottom="@dimen/dp_36"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="0dp"
@@ -137,7 +137,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <ImageView
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/dp_10"
                 android:layout_width="@dimen/card_icon_dimension"
                 android:layout_height="@dimen/card_icon_dimension"
                 android:onClick="clickThree"
